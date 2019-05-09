@@ -6,7 +6,7 @@ import NewsController from './controllers/NewsController';
 const News = new NewsController();
 const app = express();
 mongoose.connect('mongodb://localhost/news');
-const port = 3003;
+const port = 3003; // change port please, if your port is busy
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.get('/news', News.index);
 //search fist news
 app.get('/news/:id', News.read);
-//add new news
+//add  news
 app.post('/news', News.create);
 //delete news
 app.delete('/news/:id', News.delete);
