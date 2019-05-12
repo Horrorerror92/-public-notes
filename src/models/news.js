@@ -1,16 +1,14 @@
-import mongoose, {Schema}  from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-const NewsSchema = new Schema ({
-  
+const NewsSchema = new Schema({
+
   title: String,
-  currentDate: String,
-  text: String
+  text: String,
 },
 {
-  timestamps: true
-}  
-);
+  timestamps: true,
+});
 
-const News = mongoose.model('Post', NewsSchema);
+const News = mongoose.model('News', NewsSchema);
 
 export default News;

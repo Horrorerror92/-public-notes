@@ -8,24 +8,22 @@ const app = express();
 mongoose.connect('mongodb://localhost/news');
 const port = 3003; // change port please, if your port is busy
 
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-
-//show news
+// show news
 app.get('/news', News.index);
-//search fist news
+// search fist news
 app.get('/news/:id', News.read);
-//add  news
+// add  news
 app.post('/news', News.create);
-//delete news
+// delete news
 app.delete('/news/:id', News.delete);
-//update news
+// update news
 app.put('/news/:id', News.update);
 
- // start server
+// start server
 app.listen(port, () => {
   console.log(`Express works at port, ${port} `);
 });
-
